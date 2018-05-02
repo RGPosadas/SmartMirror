@@ -88,19 +88,19 @@
 
 <!--Current weather information from OpenWeatherMap JSON to PHP-->
 	<?php
-			$json_data0 = file_get_contents('http://api.openweathermap.org/data/2.5/weather?lat=45.4972&lon=-73.6104&appid=17c76c6a0fb63ffe20fef8a999fe1d4b&units=metric');
-			$decoded_current_data = json_decode($json_data0, true);
-		
-			echo '<div class="current_weather">';
-			$current_temperature = round($decoded_current_data['main']['temp']);
-				if ($current_temperature == "-0") {
-				echo "0", "&deg;C", "<br>";
-				}
-				else {
-				echo "$current_temperature", "&deg;C", "<br>";
-				}
-			echo round($decoded_current_data['wind']['speed']*3.6). " km/h", "<br>";
-			echo '</div>';
+    $json_data0 = file_get_contents('http://api.openweathermap.org/data/2.5/weather?lat=45.4972&lon=-73.6104&appid=17c76c6a0fb63ffe20fef8a999fe1d4b&units=metric');
+    $decoded_current_data = json_decode($json_data0, true);
+
+    echo '<div class="current_weather">';
+    $current_temperature = round($decoded_current_data['main']['temp']);
+        if ($current_temperature == "-0") {
+        echo "0", "&deg;C", "<br>";
+        }
+        else {
+        echo "$current_temperature", "&deg;C", "<br>";
+        }
+    echo round($decoded_current_data['wind']['speed']*3.6). " km/h", "<br>";
+    echo '</div>';
 	?>
 
 	<div style="float:right"> 
@@ -238,7 +238,7 @@
 
 <!--Google Calendar API-->
 		<?php
-			$json_data2 = file_get_contents('https://www.googleapis.com/calendar/v3/calendars/ritchelle.posadas%40gmail.com/events?key=AIzaSyBXlbkrZmKw5rYG8KaXHSwGZB1sicBgV0o');
+			$json_data2 = file_get_contents(YOUR PUBLIC GOOGLE CALENDAR WITH THE ACCESS KEY LINK);
 			$decoded_calendar_data = json_decode($json_data2, true);
 
 			echo "Today's events...", "<br>", "<br>";
